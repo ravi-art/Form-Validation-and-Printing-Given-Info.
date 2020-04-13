@@ -1,0 +1,167 @@
+ <html>
+<head>
+<title>form validation</title>
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" language="javascript">
+function validation()
+{
+ 
+  var a=document.forms["form1"]["n1"].value;
+	if(a==""){
+	alert("username can't be empty");
+	document.forms['form1']['n1'].focus();
+	return false;
+			}
+	if(!isNaN(a)){
+        alert("NAME SHOULD BE IN ALPHBET ");
+	document.forms['form1']['n1'].focus();
+		return false;
+	 }
+   if(a.length<4 || a.length>20){
+		alert("username must contain greater than 4 and less than 20 letters");
+		document.forms.n1.focus();
+		return false;
+				}
+  var b=document.forms["form1"]["l1"].value;
+     if(b==""){
+	 alert("LAST NAME CAN'T BE EMPTY");
+	 document.forms.l1.focus;
+	 return false ;
+	 }
+	 if(!isNaN(a)){
+        alert("LAST NAME  SHOULD BE IN ALPHBET ");
+	    document.forms.l1.focus();
+		return false;
+	 }
+	 if(b.length<4 || b.length>20){
+		alert("username must contain greater than 4 and less than 20 letters");
+		document.forms.l1.focus();
+		return false;
+				}
+  var c=document.forms["form1"]["d1"].value;
+   if(c=="")
+      {
+	  alert("INVALID DOB");
+	  documet.forms.d1.focus();
+	  return false;
+	  }
+  
+	 
+  var e=document.forms["form1"]["a1"].value;
+    if(e=="")
+	 {
+	   alert("ADDRESS CAN'T BE EMPTY");
+	   document.forms.a1.focus();
+	   return false;
+	   }
+	   if(!isNaN(e)){
+        alert("ADDRESS IN ALPHABET");
+	    document.forms.m1.focus();
+		return false;
+	 }
+	 
+	 
+	 var d=document.forms["form1"]["m1"].value;
+   if(isNaN(d)){
+        alert("CONTACT NUMBER SHOLUD BE IN DIGIT");
+	    document.forms.m1.focus();
+		return false;
+	 }
+	 if(d.length==10)
+	 {
+	 return true;
+	 }
+	 else
+	 {
+	   alert("NUMBER SHOLUD BE IN 10 DIGIT");
+	   document.forms.m1.focus();
+	   return false;
+	   }
+  var f1= document.forms['form1']['e1'].value;
+      var j =/^[a-zA-Z0-9.]{5,}[@][a-zA-Z0-9]{2,}[.][a-zA-Z0-9]{2,}[.]{0,1}[a-zA-Z0-9]{2,}$/;
+	  if(f1!=e1.match(j)){
+	   alert("enter a correct email");
+	   return false;}
+  }
+  </script>
+<style>
+ button,table,form,tr,td, h1 {text-align:center;align:center;border:collapse}
+</style>
+</head>
+<body bgcolor="cream">
+<form name="form1" method="post" action="rim.php">
+<h1 style="color:blue"><marquee>Indian Institute of Information Technology,Surat</marquee></h1>
+<h2 align="center" style="color:gray">Registration Form</h2>
+<center>
+<fieldset>
+<table border="1" align="center" bgcolor='yellow' height=70% width=30%  >
+<tr>
+<td>First Name </td><td> <input name="n1" type="text" placeholder="Enter your first name" required autofocus></input></td>
+</tr>
+<tr>
+<td>Last Name</td><td> <input name="l1" type="text" placeholder="Enter your last name" required autofocus></input></td>
+</tr>
+<tr>
+<td>D.O.B   </td><td><input name="d1" type="date" placeholder="Enter your DOB" required></input></td>
+</tr>
+
+<tr>
+<td>Gender</td><td> <input type="radio" name="g1"   value="MALE">Male
+           <input type="radio" name= "g1" value="FEMALE">Female</td>
+</tr>
+<tr>
+<td>Semester</td> 
+<td><select name='sem[]'>
+<option value="select">-select-</option>
+<option value="1">1st semester</option>
+<option value="2">2nd semester</option>
+<option value="3">3rd semester</option>
+<option value="4">4th semester</option>
+<option value="5">5th semester</option>
+<option value="6">6th semester</option>
+<option value="7">7th semester</option>
+<option value="8">8th semester</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>
+<select name='brn[]'>
+<option value="sel">-select-</option>
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Address </td><td> <input name="a1" type="text" placeholder="Enter your Address"  required></td>
+</tr>
+
+<tr>
+<td>Contact No. </td><td><input name="m1" type="text" placeholder="**********"required></input></td>
+</tr>
+
+<tr>
+<td>Email-ID </td><td>  <input  name="e1" type="email" placeholder="abc@gamil.com" required></td>
+</tr>
+<tr>
+<td>Blood Group</td>
+<td><select name='blg[]'>
+    <option vlue="-">-select-</option>
+    <option value="o+">0+</option>
+    <option value="o-">0-</option>
+    <option value="b+">b+</option>
+    <option value="ab+">ab+</option>
+
+</select>
+ </td>
+</tr>
+</table bgcolor="green">
+<button align="center" bgcolor="green" style="color:green" name="submit" value="submit" onclick="validation()">SUBMIT</button>
+</fieldset>
+</center>
+</form>
+</body>			
+</html>
